@@ -21,3 +21,4 @@ brew upgrade cnb
 
 - [CNB CLI 文档](https://cnb.wwvo.fun)
 - [CNB CLI 源码](https://cnb.cool/wwvo/cnb-cli/cnb)
+- [Homebrew 文档](https://docs.brew.sh)
