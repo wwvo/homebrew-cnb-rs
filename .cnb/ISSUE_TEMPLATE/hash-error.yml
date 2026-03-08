@@ -1,0 +1,27 @@
+name: 🔢 Hash 校验错误
+description: 报告包的 hash 值不匹配
+labels: ["bug"]
+body:
+  - type: checkboxes
+    attributes:
+      label: 前置检查
+      options:
+        - label: 我已使用最新版本的 Homebrew 和 Tap
+          required: true
+  - type: dropdown
+    attributes:
+      label: 操作系统
+      options:
+        - macOS (Apple Silicon)
+        - macOS (Intel)
+        - Linux (x86_64)
+        - Linux (ARM64)
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: 版本号
+      description: 出错的版本号
+      placeholder: "0.4.1"
+    validations:
+      required: true

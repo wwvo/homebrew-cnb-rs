@@ -1,0 +1,42 @@
+name: 🐛 Bug 报告
+description: 报告 Homebrew 安装/更新 CNB CLI 时的问题
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: checkboxes
+    attributes:
+      label: 前置检查
+      options:
+        - label: 我已搜索过现有 Issue，确认没有重复
+          required: true
+        - label: 我已使用最新版本的 Homebrew
+          required: true
+  - type: dropdown
+    attributes:
+      label: 操作系统
+      options:
+        - macOS (Apple Silicon)
+        - macOS (Intel)
+        - Linux (x86_64)
+        - Linux (ARM64)
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 问题描述
+      description: 清晰描述期望行为和实际行为
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 复现步骤
+      render: console
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Homebrew 版本
+      description: "粘贴 `brew --version` 的输出"
+      render: console
+    validations:
+      required: true
