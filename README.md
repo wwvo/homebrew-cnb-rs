@@ -1,5 +1,8 @@
 # homebrew-cnb-rs
 
+[![Audit Homebrew Formulae](https://github.com/wwvo/homebrew-cnb-rs/actions/workflows/audit-formulae.yml/badge.svg?branch=main)](https://github.com/wwvo/homebrew-cnb-rs/actions/workflows/audit-formulae.yml)
+[![Install And Test Homebrew Formulae](https://github.com/wwvo/homebrew-cnb-rs/actions/workflows/install-test-formulae.yml/badge.svg?branch=main)](https://github.com/wwvo/homebrew-cnb-rs/actions/workflows/install-test-formulae.yml)
+
 [cnb-rs](https://cnb.cool/wwvo/cnb-rs/cnb) 的 [Homebrew](https://brew.sh) Tap。
 
 `cnb-rs` 是一个非官方的 [CNB (cnb.cool)](https://cnb.cool) 命令行工具。
