@@ -2,7 +2,6 @@ class CnbRsMusl < Formula
   desc "An unofficial command line tool for CNB (cnb.cool) (musl, statically linked)"
   homepage "https://cnb.wwvo.fun"
   license "Apache-2.0"
-  version "0.5.0"
 
   on_macos do
     on_arm do
