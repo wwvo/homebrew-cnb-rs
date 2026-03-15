@@ -1,0 +1,65 @@
+name: Install And Test Homebrew Formulae
+
+on:
+  pull_request:
+    paths:
+      - "Formula/**"
+      - "README.md"
+      - "bin/**"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+concurrency:
+  group: install-test-formulae-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+  HOMEBREW_NO_AUTO_UPDATE: "1"
+
+jobs:
+  install-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            formula: Formula/cnb-rs.rb
+          - os: ubuntu-latest
+            formula: Formula/cnb-rs-musl.rb
+          - os: macos-latest
+            formula: Formula/cnb-rs.rb
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install Homebrew on Linux
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          echo "/home/linuxbrew/.linuxbrew/bin" >> "$GITHUB_PATH"
+          echo "/home/linuxbrew/.linuxbrew/sbin" >> "$GITHUB_PATH"
+
+      - name: Validate formula URLs and hashes
+        shell: bash
+        run: python3 bin/check.py
+
+      - name: Install formula
+        shell: bash
+        run: brew install --formula "${{ matrix.formula }}"
+
+      - name: Test installed binary
+        shell: bash
+        run: |
+          cnb-rs --version
+          if [[ "${{ matrix.formula }}" == "Formula/cnb-rs.rb" ]]; then
+            brew test cnb-rs
+          fi
