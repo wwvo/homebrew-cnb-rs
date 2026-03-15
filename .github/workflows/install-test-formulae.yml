@@ -15,7 +15,7 @@ concurrency:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-  HOMEBREW_NO_AUTO_UPDATE: "1"
+  HOMEBREW_NO_INSTALL_FROM_API: "1"
 
 jobs:
   install-test:
@@ -25,11 +25,11 @@ jobs:
       matrix:
         include:
           - os: ubuntu-latest
-            formula: Formula/cnb-rs.rb
+            formula: wwvo/cnb-rs/cnb-rs
           - os: ubuntu-latest
-            formula: Formula/cnb-rs-musl.rb
+            formula: wwvo/cnb-rs/cnb-rs-musl
           - os: macos-latest
-            formula: Formula/cnb-rs.rb
+            formula: wwvo/cnb-rs/cnb-rs
 
     steps:
       - name: Checkout
@@ -52,6 +52,18 @@ jobs:
         shell: bash
         run: python3 bin/check.py
 
+      - name: Update Homebrew metadata
+        shell: bash
+        run: brew update --quiet
+
+      - name: Register current repo as local tap
+        shell: bash
+        run: |
+          tap_root="$(brew --repository)/Library/Taps/wwvo"
+          mkdir -p "$tap_root"
+          rm -rf "$tap_root/homebrew-cnb-rs"
+          ln -s "$PWD" "$tap_root/homebrew-cnb-rs"
+
       - name: Install formula
         shell: bash
         run: brew install --formula "${{ matrix.formula }}"
@@ -60,6 +72,6 @@ jobs:
         shell: bash
         run: |
           cnb-rs --version
-          if [[ "${{ matrix.formula }}" == "Formula/cnb-rs.rb" ]]; then
-            brew test cnb-rs
+          if [[ "${{ matrix.formula }}" == "wwvo/cnb-rs/cnb-rs" ]]; then
+            brew test wwvo/cnb-rs/cnb-rs
           fi

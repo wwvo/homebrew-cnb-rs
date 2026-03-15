@@ -23,7 +23,7 @@ concurrency:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-  HOMEBREW_NO_AUTO_UPDATE: "1"
+  HOMEBREW_NO_INSTALL_FROM_API: "1"
 
 jobs:
   audit:
@@ -56,6 +56,18 @@ jobs:
         shell: bash
         run: python3 bin/validate_ci.py
 
+      - name: Update Homebrew metadata
+        shell: bash
+        run: brew update --quiet
+
+      - name: Register current repo as local tap
+        shell: bash
+        run: |
+          tap_root="$(brew --repository)/Library/Taps/wwvo"
+          mkdir -p "$tap_root"
+          rm -rf "$tap_root/homebrew-cnb-rs"
+          ln -s "$PWD" "$tap_root/homebrew-cnb-rs"
+
       - name: Validate formula URLs
         shell: bash
         run: python3 bin/check.py --url-only
@@ -63,5 +75,5 @@ jobs:
       - name: Audit formulae
         shell: bash
         run: |
-          brew audit --strict --online Formula/cnb-rs.rb
-          brew audit --strict --online Formula/cnb-rs-musl.rb
+          brew audit --strict --online wwvo/cnb-rs/cnb-rs
+          brew audit --strict --online wwvo/cnb-rs/cnb-rs-musl
