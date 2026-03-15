@@ -1,24 +1,34 @@
-# homebrew-cnb-cli
+# homebrew-cnb-rs
 
-[CNB CLI](https://cnb.cool/wwvo/cnb-cli/cnb) 的 [Homebrew](https://brew.sh) Tap。
+[cnb-rs](https://cnb.cool/wwvo/cnb-rs/cnb) 的 [Homebrew](https://brew.sh) Tap。
 
-CNB CLI 是一个非官方的 [CNB (cnb.cool)](https://cnb.cool) 命令行工具。
+`cnb-rs` 是一个非官方的 [CNB (cnb.cool)](https://cnb.cool) 命令行工具。
 
 ## 安装
 
 ```bash
-brew tap wwvo/cnb-cli https://cnb.cool/wwvo/cnb-cli/homebrew-cnb-cli.git
-brew install wwvo/cnb-cli/cnb
+brew tap wwvo/cnb-rs https://cnb.cool/wwvo/cnb-rs/homebrew-cnb-rs.git
+brew install wwvo/cnb-rs/cnb-rs
 ```
 
 ## 更新
 
 ```bash
-brew upgrade cnb
+brew upgrade cnb-rs
+```
+
+## 迁移提示
+
+主仓库的命令入口已从 `cnb` 改为 `cnb-rs`。
+
+如果你仍希望继续输入 `cnb`，可以在 shell 配置中添加 alias：
+
+```bash
+alias cnb='cnb-rs'
 ```
 
 ## 相关链接
 
 - [CNB CLI 文档](https://cnb.wwvo.fun)
-- [CNB CLI 源码](https://cnb.cool/wwvo/cnb-cli/cnb)
+- [CNB CLI 源码](https://cnb.cool/wwvo/cnb-rs/cnb)
 - [Homebrew 文档](https://docs.brew.sh)
