@@ -36,7 +36,11 @@ class CnbRs < Formula
 
       If you still want to use `cnb`, add an alias in your shell config:
 
+      Bash / Zsh:
         alias cnb='cnb-rs'
+
+      Fish:
+        alias cnb cnb-rs
     EOS
   end
 
