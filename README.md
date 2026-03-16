@@ -1,5 +1,6 @@
 # homebrew-cnb-rs
 
+[![CNB](/-/badge/git/latest/ci/pipeline-as-code)](https://cnb.cool/wwvo/cnb-rs/homebrew-cnb-rs/-/pipelines)
 [![Audit Homebrew Formulae](https://github.com/wwvo/homebrew-cnb-rs/actions/workflows/audit-formulae.yml/badge.svg?branch=main)](https://github.com/wwvo/homebrew-cnb-rs/actions/workflows/audit-formulae.yml)
 [![Install And Test Homebrew Formulae](https://github.com/wwvo/homebrew-cnb-rs/actions/workflows/install-test-formulae.yml/badge.svg?branch=main)](https://github.com/wwvo/homebrew-cnb-rs/actions/workflows/install-test-formulae.yml)
 
