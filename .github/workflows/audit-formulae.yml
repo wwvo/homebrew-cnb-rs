@@ -5,16 +5,12 @@ on:
     paths:
       - "Formula/**"
       - "README.md"
-      - "bin/**"
-      - ".github/workflows/**"
   push:
     branches:
       - main
     paths:
       - "Formula/**"
       - "README.md"
-      - "bin/**"
-      - ".github/workflows/**"
   workflow_dispatch:
 
 concurrency:
