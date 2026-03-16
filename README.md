@@ -30,6 +30,29 @@ brew upgrade cnb-rs
 alias cnb='cnb-rs'
 ```
 
+## 终端补全
+
+Homebrew 安装时已自动生成并启用终端补全功能，无需额外配置。
+
+支持 bash、zsh、fish、elvish 和 powershell 等常见 shell。
+
+安装完成后，请重启终端或执行相应的 shell 重载命令使补全生效：
+
+**Bash:**
+```bash
+source ~/.bashrc
+```
+
+**Zsh:**
+```bash
+source ~/.zshrc
+```
+
+**Fish:**
+```bash
+source ~/.config/fish/config.fish
+```
+
 ## 相关链接
 
 - [CNB CLI 文档](https://cnb.wwvo.fun)
