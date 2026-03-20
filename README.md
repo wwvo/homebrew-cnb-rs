@@ -33,23 +33,32 @@ alias cnb='cnb-rs'
 
 ## 终端补全
 
-Homebrew 安装时已自动生成并启用终端补全功能，无需额外配置。
+Homebrew Formula 会随安装过程生成补全脚本。
 
-支持 bash、zsh、fish、elvish 和 powershell 等常见 shell。
+如果你的 shell 已经正确启用了 Homebrew 的 completion 支持，通常不需要额外配置。
+
+如果补全没有自动生效，请参考 Homebrew 官方文档为当前 shell 打开 completion 支持：
+
+- <https://docs.brew.sh/Shell-Completion>
+
+对通过 Homebrew 安装的 `cnb-rs`，常见场景主要是 `bash`、`zsh` 和 `fish`。
 
 安装完成后，请重启终端或执行相应的 shell 重载命令使补全生效：
 
 **Bash:**
+
 ```bash
 source ~/.bashrc
 ```
 
 **Zsh:**
+
 ```bash
 source ~/.zshrc
 ```
 
 **Fish:**
+
 ```bash
 source ~/.config/fish/config.fish
 ```

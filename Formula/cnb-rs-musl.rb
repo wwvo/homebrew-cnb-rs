@@ -27,7 +27,7 @@ class CnbRsMusl < Formula
 
   def install
     bin.install "cnb-rs"
-    generate_completions_from_executable(bin/"cnb-rs", "completion")
+    generate_completions_from_executable(bin/"cnb-rs", "completion", "-s")
   end
 
   def caveats
