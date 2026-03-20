@@ -5,23 +5,23 @@ class CnbRs < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/wwvo/cnb-rs/releases/download/v0.5.0/cnb-rs-v0.5.0-aarch64-apple-darwin.tar.gz"
-      sha256 "7001fbaa10d7f2cbe24cd39c85d235c53fdf201cf88f6097e1a6243ba7039142"
+      url "https://github.com/wwvo/cnb-rs/releases/download/v0.11.2/cnb-rs-v0.11.2-aarch64-apple-darwin.tar.gz"
+      sha256 "c30b4596484afc566aa2f1501dd185b6f403ed39f74113c30367b82eca523ddd"
     end
     on_intel do
-      url "https://github.com/wwvo/cnb-rs/releases/download/v0.5.0/cnb-rs-v0.5.0-x86_64-apple-darwin.tar.gz"
-      sha256 "23e39b872b1ef414c7e0f7db9f9d162b6dcc9ac4cb3e54e2af8162e9849a9334"
+      url "https://github.com/wwvo/cnb-rs/releases/download/v0.11.2/cnb-rs-v0.11.2-x86_64-apple-darwin.tar.gz"
+      sha256 "02dfabaee7bd5df479a180cf8e1b4b189a4bcf839aa02108c0fdbf9f430c2e44"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/wwvo/cnb-rs/releases/download/v0.5.0/cnb-rs-v0.5.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "7d30ae8e76d55caf0d52e9574c6b0805909a9f9f52a4c9fc9c4d35c1d408879a"
+      url "https://github.com/wwvo/cnb-rs/releases/download/v0.11.2/cnb-rs-v0.11.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "ed9ff6c2c33e6653ca6582423de6a23c7f1bf7e55df5c2f9667464d4b932c70b"
     end
     on_intel do
-      url "https://github.com/wwvo/cnb-rs/releases/download/v0.5.0/cnb-rs-v0.5.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "03955c480e143808e5fdb905201704c3b5ddb6bf51269200e4282e3feef19e5a"
+      url "https://github.com/wwvo/cnb-rs/releases/download/v0.11.2/cnb-rs-v0.11.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "2e2d41ddf367c85c44d36afa44f1a9e7a4371adf5e8f5e0bf51c197fcef72f96"
     end
   end
 
